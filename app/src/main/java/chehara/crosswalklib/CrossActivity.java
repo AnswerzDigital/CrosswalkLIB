@@ -23,10 +23,6 @@ public class CrossActivity extends XWalkActivity {
     public XWalkView xWalkWebView;
     String url = "https://www.google.co.in/";
 
-    @Override
-    protected void onXWalkReady() {
-        xWalkWebView.load(url, null);
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -130,5 +126,10 @@ public class CrossActivity extends XWalkActivity {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    protected void onXWalkReady() {
+        xWalkWebView.load(url, null);
     }
 }
