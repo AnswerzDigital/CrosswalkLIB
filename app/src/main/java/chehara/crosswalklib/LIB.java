@@ -9,7 +9,7 @@ import android.content.Intent;
 public class LIB {
 
     public static void callFN(Context context) {
-        Intent intent = new Intent(context, MainActivity.class);
+        Intent intent = new Intent(context, CrossActivity.class);
         context.startActivity(intent);
     }
 }

@@ -1,23 +1,12 @@
 package chehara.crosswalklib;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.net.http.SslError;
-import android.os.Build;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.Window;
 import android.webkit.ConsoleMessage;
 import android.webkit.ValueCallback;
-import android.widget.Button;
-import android.widget.TextView;
 
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
@@ -25,10 +14,10 @@ import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
 import org.xwalk.core.XWalkView;
 
-import java.util.Timer;
+import chehara.crosswalklib.R;
 
 
-public class MainActivity extends AppCompatActivity {
+public class CrossActivity extends AppCompatActivity {
 
     public XWalkView xWalkWebView;
     String url = "https://www.google.co.in/";
@@ -36,21 +25,21 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_cross);
 
         try {
-          //  XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
+            //  XWalkPreferences.setValue(XWalkPreferences.ANIMATABLE_XWALK_VIEW, true);
             Intent intent = getIntent();
 
 
             Bundle extras = intent.getExtras();
 
-            xWalkWebView = (XWalkView) findViewById(R.id.xwalkWebView);
+            xWalkWebView = (XWalkView) findViewById(R.id.webView);
 
             xWalkWebView.load(url, null);
 
             //  xWalkWebView.clearCache(true);
-             Log.e("TAG", url);
+            Log.e("TAG", url);
 
 
             // xWalkWebView.setBackground(ContextCompat.getDrawable(getActivity(), R.drawable.banner4));
@@ -88,7 +77,6 @@ public class MainActivity extends AppCompatActivity {
                                               XWalkUIClient.LoadStatus status) {
                     System.out.println("onPageLoadStopped  " + status);
                     try {
-
 
 
                     } catch (Exception e) {
