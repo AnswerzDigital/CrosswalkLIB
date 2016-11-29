@@ -8,6 +8,7 @@ import android.util.Log;
 import android.webkit.ConsoleMessage;
 import android.webkit.ValueCallback;
 
+import org.xwalk.core.XWalkActivity;
 import org.xwalk.core.XWalkHttpAuthHandler;
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
@@ -17,10 +18,15 @@ import org.xwalk.core.XWalkView;
 import chehara.crosswalklib.R;
 
 
-public class CrossActivity extends AppCompatActivity {
+public class CrossActivity extends XWalkActivity {
 
     public XWalkView xWalkWebView;
     String url = "https://www.google.co.in/";
+
+    @Override
+    protected void onXWalkReady() {
+        xWalkWebView.load(url, null);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +42,7 @@ public class CrossActivity extends AppCompatActivity {
 
             xWalkWebView = (XWalkView) findViewById(R.id.webView);
 
-            xWalkWebView.load(url, null);
+            //xWalkWebView.load(url, null);
 
             //  xWalkWebView.clearCache(true);
             Log.e("TAG", url);
