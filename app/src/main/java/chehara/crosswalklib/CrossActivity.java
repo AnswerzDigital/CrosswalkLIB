@@ -9,7 +9,7 @@ import android.webkit.ConsoleMessage;
 import android.webkit.ValueCallback;
 
 import org.xwalk.core.XWalkActivity;
-import org.xwalk.core.XWalkHttpAuthHandler;
+
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkResourceClient;
 import org.xwalk.core.XWalkUIClient;
@@ -90,10 +90,7 @@ public class CrossActivity extends XWalkActivity {
             });
 
             xWalkWebView.setResourceClient(new XWalkResourceClient(xWalkWebView) {
-                @Override
-                public void onReceivedHttpAuthRequest(XWalkView view, XWalkHttpAuthHandler handler, String host, String realm) {
-                    System.out.println("onReceivedHttpAuthRequest" + handler);
-                }
+
 
                 @Override
                 public boolean shouldOverrideUrlLoading(XWalkView view, String url) {
