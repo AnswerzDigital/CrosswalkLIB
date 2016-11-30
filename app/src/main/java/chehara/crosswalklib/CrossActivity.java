@@ -21,7 +21,7 @@ import chehara.crosswalklib.R;
 public class CrossActivity extends XWalkActivity {
 
     public XWalkView xWalkWebView;
-    String url = "https://chehara.com/";
+    String url = "https://cheharatime.com/";
 
 
     @Override
